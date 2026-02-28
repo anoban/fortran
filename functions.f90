@@ -41,6 +41,18 @@ contains
 
    end function gcd
 
+
+   integer(kind=int64) function argmin(array)
+      real(kind=real64), intent(in) :: array(:)
+
+      do argmin = 2, size(array)
+         if (array(argmin - 1) < array(argmin)) then
+            argmin = argmin - 1
+         end if
+      end do
+
+   end function argmin
+
 end module routines
 
 program functions
